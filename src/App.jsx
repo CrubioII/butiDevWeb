@@ -130,7 +130,7 @@ function Hero({ onJump, c }) {
             <a className="btn btn-ghost btn-lg" href="#proyectos" onClick={(e) => { e.preventDefault(); onJump("proyectos"); }}>
               {h.ctaSecondary}
             </a>
-            <CurvyArrow size={86} style={{ position: "absolute", left: -104, top: -16, transform: "scaleX(-1) rotate(-8deg)", opacity: 0.85 }} />
+            <CurvyArrow size={86} className="deco-mobile-hide" style={{ position: "absolute", left: -104, top: -16, transform: "scaleX(-1) rotate(-8deg)", opacity: 0.85 }} />
           </div>
         </div>
 
@@ -349,7 +349,7 @@ function FinalCTA({ c }) {
         <h2 className="display" data-reveal data-delay="60" style={{ fontSize: "clamp(40px,7vw,92px)", maxWidth: 980 }}>{t.title[0]}<br />{t.title[1]}</h2>
         <p className="lead muted" data-reveal data-delay="140" style={{ marginTop: 26, marginBottom: 44, maxWidth: 560, position: "relative" }}>
           {t.sub}
-          <Check size={40} style={{ color: "var(--terra)", position: "absolute", right: -54, top: -22 }} />
+          <Check size={40} className="deco-mobile-hide" style={{ color: "var(--terra)", position: "absolute", right: -54, top: -22 }} />
         </p>
 
         <div className="form-card" data-reveal data-delay="180">

@@ -16,9 +16,9 @@ function Svg({ size = 24, w, children, vb = "0 0 24 24", style, className = "" }
 }
 
 /* curved hand-drawn arrow, points down-right toward a CTA */
-function CurvyArrow({ size = 96, style }) {
+function CurvyArrow({ size = 96, style, className }) {
   return (
-    <Svg size={size} w={size} vb="0 0 120 110" style={style}>
+    <Svg size={size} w={size} vb="0 0 120 110" style={style} className={className}>
       <path d="M14 12 C 10 44, 24 76, 60 84 C 78 88, 92 84, 100 78" />
       <path d="M86 86 C 92 84, 98 80, 100 78 C 100 74, 98 66, 95 60" />
     </Svg>

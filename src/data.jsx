@@ -75,7 +75,7 @@ const CONTENT = {
       modalCta: "Quiero algo así",
       items: [
         {
-          name: "Road to BTS", tag: "SaaS · Farmacias", type: "Sistema de gestión de inventario farmacéutico",
+          name: "Gestión Inventarial de Droguerías", tag: "SaaS · Farmacias", type: "Sistema de gestión de inventario farmacéutico",
           stack: ["Spring Boot 3.2.5", "Angular 17", "Java 17", "PostgreSQL", "JWT"],
           highlights: ["Arquitectura multi-tenant para múltiples farmacias en una sola plataforma", "Event sourcing para trazabilidad total del stock en tiempo real"],
           detail: "Una plataforma SaaS donde cada farmacia opera de forma aislada y segura sobre la misma infraestructura. El control de inventario usa event sourcing: cada movimiento de stock queda registrado como un evento inmutable, lo que permite auditar y reconstruir el estado del inventario en cualquier momento.",
@@ -210,7 +210,7 @@ const CONTENT = {
       modalCta: "I want something like this",
       items: [
         {
-          name: "Road to BTS", tag: "SaaS · Pharmacies", type: "Pharmaceutical inventory management system",
+          name: "Pharmacy Inventory Management", tag: "SaaS · Pharmacies", type: "Pharmaceutical inventory management system",
           stack: ["Spring Boot 3.2.5", "Angular 17", "Java 17", "PostgreSQL", "JWT"],
           highlights: ["Multi-tenant architecture for multiple pharmacies on a single platform", "Event sourcing for full real-time stock traceability"],
           detail: "A SaaS platform where each pharmacy operates in an isolated, secure way on the same infrastructure. Inventory control uses event sourcing: every stock movement is recorded as an immutable event, which makes it possible to audit and reconstruct the inventory state at any point in time.",
