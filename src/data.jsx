@@ -83,6 +83,7 @@ const CONTENT = {
         },
         {
           name: "Saipan Airsoft Web", tag: "Blog · Comunidad", type: "Blog empresarial de comunidad airsoft",
+          featured: true, image: "/assets/saipan-airsoft-hero.jpg",
           stack: ["React 19", "Vite", "Tailwind CSS", "TypeScript", "Vimeo Player"],
           highlights: ["Diseño 100% fiel al Figma aprobado, sin desviaciones", "Responsive impecable en 3 breakpoints, 9 secciones"],
           detail: "Un blog y portal de comunidad construido con fidelidad pixel-perfect al diseño aprobado en Figma. Nueve secciones cuidadosamente maquetadas, integración de video vía Vimeo Player y un comportamiento responsive verificado en tres breakpoints.",
@@ -90,6 +91,7 @@ const CONTENT = {
         },
         {
           name: "Troqueles INK", tag: "ERP · Producción", type: "Sistema de cotizaciones y producción para artes gráficas",
+          featured: true, image: "/assets/troqueles-ink-home.jpg",
           stack: ["Django", "DRF", "React 18", "WeasyPrint", "SQLite → PostgreSQL"],
           highlights: ["Calculadora de pliegos automática que elimina el cálculo manual", "Flujo completo cotización → factura, con PDF por correo"],
           detail: "Un ERP para una empresa de artes gráficas que automatiza desde la cotización hasta la factura. La calculadora de pliegos resuelve automáticamente el aprovechamiento del material, y cada documento se genera en PDF y se envía por correo sin intervención manual.",
@@ -216,6 +218,7 @@ const CONTENT = {
         },
         {
           name: "Saipan Airsoft Web", tag: "Blog · Community", type: "Corporate blog for an airsoft community",
+          featured: true, image: "/assets/saipan-airsoft-hero.jpg",
           stack: ["React 19", "Vite", "Tailwind CSS", "TypeScript", "Vimeo Player"],
           highlights: ["100% faithful to the approved Figma, no deviations", "Flawless responsive across 3 breakpoints, 9 sections"],
           detail: "A blog and community portal built with pixel-perfect fidelity to the design approved in Figma. Nine carefully laid-out sections, video integration via Vimeo Player and responsive behavior verified across three breakpoints.",
@@ -223,6 +226,7 @@ const CONTENT = {
         },
         {
           name: "Troqueles INK", tag: "ERP · Production", type: "Quoting and production system for a graphic arts company",
+          featured: true, image: "/assets/troqueles-ink-home.jpg",
           stack: ["Django", "DRF", "React 18", "WeasyPrint", "SQLite → PostgreSQL"],
           highlights: ["Automatic sheet calculator that eliminates manual math", "Full quote → invoice flow, with PDF by email"],
           detail: "An ERP for a graphic arts company that automates everything from quoting to invoicing. The sheet calculator automatically solves material yield, and every document is generated as a PDF and emailed without manual intervention.",

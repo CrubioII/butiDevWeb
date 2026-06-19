@@ -255,6 +255,7 @@ function Services({ c }) {
 /* projects (cream, black cards) */
 function Projects({ onOpen, c }) {
   const p = c.projects;
+  const order = p.items.map((_, i) => i).sort((a, b) => (p.items[b].featured ? 1 : 0) - (p.items[a].featured ? 1 : 0));
   return (
     <section className="sec-pad bg-cream" id="proyectos" data-screen-label="Proyectos" style={{ paddingTop: 0 }}>
       <div className="wrap">
@@ -265,28 +266,36 @@ function Projects({ onOpen, c }) {
         </div>
 
         <div className="proj-grid">
-          {p.items.map((pr, i) => (
-            <button className="card-d proj-card" key={i} data-reveal data-delay={(i % 2) * 90}
-              onClick={() => onOpen(i)} aria-label={p.open + " — " + pr.name}>
-              <div className="proj-top">
-                <span className="proj-idx">{p.labelTag.toUpperCase()} 0{i + 1}</span>
-                <span className="proj-open">{p.open} <ArrowR size={14} /></span>
-              </div>
-              <div>
-                <div className="proj-name">{pr.name}</div>
-                <div className="proj-type" style={{ marginTop: 8 }}>{pr.type}</div>
-              </div>
-              <div className="proj-stack">{pr.stack.map((st) => (<span className="badge badge-line-d" key={st}>{st}</span>))}</div>
-              <div className="proj-bullets">
-                {pr.highlights.map((hl, j) => (
-                  <div className="pb" key={j}><span className="ck"><Check size={16} /></span><span>{hl}</span></div>
-                ))}
-              </div>
-              <div style={{ marginTop: "auto", paddingTop: 6 }}>
-                <span className="tag-pill" style={{ background: "var(--terra)", color: "var(--offwhite)" }}>{pr.tag}</span>
-              </div>
-            </button>
-          ))}
+          {order.map((idx, i) => {
+            const pr = p.items[idx];
+            return (
+              <button className={"card-d proj-card" + (pr.image ? " has-thumb" : "")} key={idx} data-reveal data-delay={(i % 2) * 90}
+                onClick={() => onOpen(idx)} aria-label={p.open + " — " + pr.name}>
+                {pr.image && (
+                  <div className="proj-thumb">
+                    <img src={pr.image} alt={pr.name} loading="lazy" />
+                  </div>
+                )}
+                <div className="proj-top">
+                  <span className="proj-idx">{p.labelTag.toUpperCase()} 0{i + 1}</span>
+                  <span className="proj-open">{p.open} <ArrowR size={14} /></span>
+                </div>
+                <div>
+                  <div className="proj-name">{pr.name}</div>
+                  <div className="proj-type" style={{ marginTop: 8 }}>{pr.type}</div>
+                </div>
+                <div className="proj-stack">{pr.stack.map((st) => (<span className="badge badge-line-d" key={st}>{st}</span>))}</div>
+                <div className="proj-bullets">
+                  {pr.highlights.map((hl, j) => (
+                    <div className="pb" key={j}><span className="ck"><Check size={16} /></span><span>{hl}</span></div>
+                  ))}
+                </div>
+                <div style={{ marginTop: "auto", paddingTop: 6 }}>
+                  <span className="tag-pill" style={{ background: "var(--terra)", color: "var(--offwhite)" }}>{pr.tag}</span>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -458,6 +467,9 @@ function ProjectModal({ project, labels, onClose }) {
         <button className="modal-close" onClick={close} aria-label="Cerrar">
           <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" fill="none"><path d="M5 5 L19 19 M19 5 L5 19" /></svg>
         </button>
+        {project.image && (
+          <div className="modal-img"><img src={project.image} alt={project.name} /></div>
+        )}
         <div className="modal-head">
           <span className="tag-pill" style={{ background: "var(--black)", color: "var(--cream)", marginBottom: 18 }}>{project.tag}</span>
           <h3 className="h2" style={{ fontSize: "clamp(30px,5vw,52px)" }}>{project.name}</h3>
